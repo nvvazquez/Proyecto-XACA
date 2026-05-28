@@ -13,7 +13,7 @@ function TarjetaCategoria({ categoria }) {
     const color = COLORES[categoria.id] || { borde: '#aaa', fondo: 'rgba(0,0,0,0.08)', texto: '#555' };
 
 
-    const handleClick = () => {
+    const onClick = () => {
         if (categoria.nombre === 'Ropa prestada') {
             navigate('/prestadas')
         } else {
@@ -22,14 +22,14 @@ function TarjetaCategoria({ categoria }) {
     }
 
     return (
-        <div className={styles.tarjeta} style={{ borderColor: color.borde }} onClick={handleClick}> 
+        <div className={styles.tarjeta} style={{ borderColor: color.borde }} onClick={onClick}> 
             <div className={styles.nombre} style={{ color: color.texto }}>{categoria.nombre}</div>
             <div className={styles.descripcion}>{categoria.descripcion}</div>
             <div className={styles.footer}>
                 <span className={styles.badge} style={{ backgroundColor: color.fondo, color: color.texto }}>
                     Ver categoría
                 </span>
-                <span className={styles.chevron} style={{ color: color.borde }}>›</span>
+                <span className={styles.flecha} style={{ color: color.borde }}>›</span>
             </div>
         </div>
     )

@@ -1,0 +1,35 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 24px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.enlace {
+    font-size: 13px;
+    color: #7B6FD4;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.enlace:hover {
+    text-decoration: underline;
+}
+
+.separador {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.actual {
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+}

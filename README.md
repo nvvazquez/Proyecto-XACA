@@ -184,6 +184,11 @@ El frontend quedará disponible en `http://localhost:5173`.
 
 ---
 
+## Autores
+| [<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Nicolás Vázquez Vázquez</sub>](https://github.com/camilafernanda)
+| :---: |
+
+---
 ## Licencia
 
 Uso interno — Asociación Cultural Xacarandaina.

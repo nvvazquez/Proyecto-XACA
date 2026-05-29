@@ -19,7 +19,8 @@ Permite controlar el inventario de prendas por tipo, categoría y subcategoría,
    - [Prendas](#prendas)
    - [Proveedores](#proveedores)
 5. [Funcionalidades principales](#funcionalidades-principales)
-6. [Licencia](#licencia)
+6. [Autores](#autores)
+7. [Licencia](#licencia)
 
 ---
 
@@ -185,7 +186,7 @@ El frontend quedará disponible en `http://localhost:5173`.
 ---
 
 ## Autores
-| [<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Nicolás Vázquez Vázquez</sub>](https://github.com/camilafernanda)
+| [<img src="https://github.com/nvvazquez.png" width=115><br><sub>Nicolás Vázquez Vázquez</sub>](https://github.com/nvvazquez)
 | :---: |
 
 ---

@@ -1,0 +1,403 @@
+[
+{
+  "model": "almacen.categoria",
+  "pk": 1,
+  "fields": {
+    "nombre": "Ropa Hombre",
+    "descripcion": "Trajes, partes de arriba, partes de abajo y accesorios cabeza"
+  }
+},
+{
+  "model": "almacen.categoria",
+  "pk": 2,
+  "fields": {
+    "nombre": "Ropa Mujer",
+    "descripcion": "Partes de arriba, partes de abajo, accesorios varios y accesorios cabeza"
+  }
+},
+{
+  "model": "almacen.categoria",
+  "pk": 3,
+  "fields": {
+    "nombre": "Calzado",
+    "descripcion": "Calzado de montaña y calzado de gala"
+  }
+},
+{
+  "model": "almacen.categoria",
+  "pk": 4,
+  "fields": {
+    "nombre": "Ropa prestada",
+    "descripcion": "Prendas actualmente prestadas pendientes de devolución"
+  }
+},
+{
+  "model": "almacen.subcategoria",
+  "pk": 1,
+  "fields": {
+    "nombre": "Trajes",
+    "descripcion": "Traje de milraias, traje, traje de gala",
+    "categoria": 1
+  }
+},
+{
+  "model": "almacen.subcategoria",
+  "pk": 2,
+  "fields": {
+    "nombre": "Partes de arriba",
+    "descripcion": "Camisa, camisa de estopa, chaleco de santiago, chaleco de montaña, faixa",
+    "categoria": 1
+  }
+},
+{
+  "model": "almacen.subcategoria",
+  "pk": 3,
+  "fields": {
+    "nombre": "Partes de abajo",
+    "descripcion": "Calzon, polainas, cirolas, cirolas de estopa, medios",
+    "categoria": 1
+  }
+},
+{
+  "model": "almacen.subcategoria",
+  "pk": 4,
+  "fields": {
+    "nombre": "Accesorios cabeza",
+    "descripcion": "Pucho, Monteira, Sombreiro, Tella",
+    "categoria": 1
+  }
+},
+{
+  "model": "almacen.subcategoria",
+  "pk": 5,
+  "fields": {
+    "nombre": "Calzado de montaña",
+    "descripcion": "",
+    "categoria": 3
+  }
+},
+{
+  "model": "almacen.subcategoria",
+  "pk": 6,
+  "fields": {
+    "nombre": "Calzado de gala",
+    "descripcion": "",
+    "categoria": 3
+  }
+},
+{
+  "model": "almacen.subcategoria",
+  "pk": 7,
+  "fields": {
+    "nombre": "Accesorios varios",
+    "descripcion": "Sapos y pendientes",
+    "categoria": 2
+  }
+},
+{
+  "model": "almacen.subcategoria",
+  "pk": 8,
+  "fields": {
+    "nombre": "Partes de arriba",
+    "descripcion": "Camisolas, Xubóns, Chaquetillas y Mantón",
+    "categoria": 2
+  }
+},
+{
+  "model": "almacen.subcategoria",
+  "pk": 9,
+  "fields": {
+    "nombre": "Partes de abajo",
+    "descripcion": "Refaixo de lana, Enagua, Refaixo acolchado y Zagal",
+    "categoria": 2
+  }
+},
+{
+  "model": "almacen.subcategoria",
+  "pk": 10,
+  "fields": {
+    "nombre": "Accesorios cabeza",
+    "descripcion": "Cofia y Pano",
+    "categoria": 2
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 1,
+  "fields": {
+    "nombre": "Pucho",
+    "descripcion": "",
+    "subcategoria": 4
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 2,
+  "fields": {
+    "nombre": "Monteira",
+    "descripcion": "",
+    "subcategoria": 4
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 3,
+  "fields": {
+    "nombre": "Sombreiro",
+    "descripcion": "",
+    "subcategoria": 4
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 4,
+  "fields": {
+    "nombre": "Zocas",
+    "descripcion": "",
+    "subcategoria": 5
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 5,
+  "fields": {
+    "nombre": "Zocos",
+    "descripcion": "",
+    "subcategoria": 5
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 6,
+  "fields": {
+    "nombre": "Tella",
+    "descripcion": "",
+    "subcategoria": 4
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 7,
+  "fields": {
+    "nombre": "Zapato de gala",
+    "descripcion": "",
+    "subcategoria": 6
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 8,
+  "fields": {
+    "nombre": "Zapato de tacón",
+    "descripcion": "",
+    "subcategoria": 6
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 9,
+  "fields": {
+    "nombre": "Traje de milraias",
+    "descripcion": "",
+    "subcategoria": 1
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 10,
+  "fields": {
+    "nombre": "Traje",
+    "descripcion": "",
+    "subcategoria": 1
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 11,
+  "fields": {
+    "nombre": "Traje de gala",
+    "descripcion": "",
+    "subcategoria": 1
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 12,
+  "fields": {
+    "nombre": "Camisa",
+    "descripcion": "",
+    "subcategoria": 2
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 13,
+  "fields": {
+    "nombre": "Camisa de estopa",
+    "descripcion": "",
+    "subcategoria": 2
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 14,
+  "fields": {
+    "nombre": "Chaleco de santiago",
+    "descripcion": "",
+    "subcategoria": 2
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 15,
+  "fields": {
+    "nombre": "Chaleco de montaña",
+    "descripcion": "",
+    "subcategoria": 2
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 16,
+  "fields": {
+    "nombre": "Calzón",
+    "descripcion": "",
+    "subcategoria": 3
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 17,
+  "fields": {
+    "nombre": "Polainas",
+    "descripcion": "",
+    "subcategoria": 3
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 18,
+  "fields": {
+    "nombre": "Cirolas",
+    "descripcion": "",
+    "subcategoria": 3
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 19,
+  "fields": {
+    "nombre": "Medios",
+    "descripcion": "",
+    "subcategoria": 3
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 20,
+  "fields": {
+    "nombre": "Sapos",
+    "descripcion": "",
+    "subcategoria": 7
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 21,
+  "fields": {
+    "nombre": "Pendientes",
+    "descripcion": "",
+    "subcategoria": 7
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 22,
+  "fields": {
+    "nombre": "Camisolas",
+    "descripcion": "",
+    "subcategoria": 8
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 23,
+  "fields": {
+    "nombre": "Xubóns",
+    "descripcion": "",
+    "subcategoria": 8
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 24,
+  "fields": {
+    "nombre": "Chaquetillas",
+    "descripcion": "",
+    "subcategoria": 8
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 25,
+  "fields": {
+    "nombre": "Mantón",
+    "descripcion": "",
+    "subcategoria": 8
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 26,
+  "fields": {
+    "nombre": "Refaixo de lana",
+    "descripcion": "",
+    "subcategoria": 9
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 27,
+  "fields": {
+    "nombre": "Enagua",
+    "descripcion": "",
+    "subcategoria": 9
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 28,
+  "fields": {
+    "nombre": "Refaixo acolchado",
+    "descripcion": "",
+    "subcategoria": 9
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 29,
+  "fields": {
+    "nombre": "Zagal",
+    "descripcion": "",
+    "subcategoria": 9
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 30,
+  "fields": {
+    "nombre": "Cofia",
+    "descripcion": "",
+    "subcategoria": 10
+  }
+},
+{
+  "model": "almacen.tipo",
+  "pk": 31,
+  "fields": {
+    "nombre": "Pano",
+    "descripcion": "",
+    "subcategoria": 10
+  }
+}
+]

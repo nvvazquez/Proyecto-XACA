@@ -108,9 +108,10 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-**4. Aplicar migraciones y arrancar**
+**4. Aplicar migraciones, datos iniciales y arrancar**
 ```bash
 python manage.py migrate
+python manage.py loaddata fixtures/inicial.json
 python manage.py runserver
 ```
 

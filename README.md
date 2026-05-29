@@ -12,15 +12,16 @@ Permite controlar el inventario de prendas por tipo, categoría y subcategoría,
 3. [Instalación y puesta en marcha](#instalación-y-puesta-en-marcha)
    - [Backend](#backend)
    - [Frontend](#frontend)
-4. [API — Endpoints](#api--endpoints)
+4. [Documentación de la API](#documentación-de-la-api)
+5. [API — Endpoints](#api--endpoints)
    - [Categorías](#categorías)
    - [Subcategorías](#subcategorías)
    - [Tipos](#tipos)
    - [Prendas](#prendas)
    - [Proveedores](#proveedores)
-5. [Funcionalidades principales](#funcionalidades-principales)
-6. [Autores](#autores)
-7. [Licencia](#licencia)
+6. [Funcionalidades principales](#funcionalidades-principales)
+7. [Autores](#autores)
+8. [Licencia](#licencia)
 
 ---
 
@@ -126,6 +127,14 @@ npm run dev
 ```
 
 El frontend quedará disponible en `http://localhost:5173`.
+
+---
+## Documentación de la API
+
+Con el servidor arrancado, la documentación interactiva está disponible en:
+
+- **Swagger UI**: `http://localhost:8000/api/docs/`
+- **Esquema OpenAPI**: `http://localhost:8000/api/schema/`
 
 ---
 

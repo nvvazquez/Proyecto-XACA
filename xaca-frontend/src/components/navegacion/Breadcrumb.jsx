@@ -12,7 +12,7 @@ function Breadcrumb(props) {
                     <span key={index} className={styles.item}>
                         {!isLast ? (
                             <>
-                                <span className={styles.enlace} onClick={() => nivel.ruta && navigate(nivel.ruta)}>
+                                <span className={nivel.ruta ? styles.enlace : styles.actual} onClick={() => nivel.ruta && navigate(nivel.ruta)}>
                                     {nivel.label}
                                 </span>
                                 <span className={styles.separador}>›</span>

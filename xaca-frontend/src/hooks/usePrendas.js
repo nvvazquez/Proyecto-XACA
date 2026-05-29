@@ -3,7 +3,6 @@ import { createPrenda, updatePrenda, deletePrenda, cambiarEstado } from '../serv
 import { getPrendasPorTipo } from '../services/categoriasService'
 
 function usePrendas(tipoId) {
-    console.log('useNavegacion recibe tipoId:', tipoId);
     const [prendas, setPrendas] = useState([]);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);

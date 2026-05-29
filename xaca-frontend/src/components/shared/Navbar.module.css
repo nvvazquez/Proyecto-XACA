@@ -16,13 +16,6 @@
   gap: 10px;
 }
 
-.logo {
-  width: 28px;
-  height: 28px;
-  background: #333;
-  border-radius: 6px;
-}
-
 .title {
   font-size: 15px;
   font-weight: 500;
@@ -40,6 +33,29 @@
   padding: 6px 15px;
   border-radius: 8px;
   text-decoration: none;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background: #7b6fd4;
+    border-radius: 99px;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.link:hover {
+    color: #7b6fd4;
+}
+
+.link:hover::after {
+    transform: scaleX(1);
 }
 
 .linkActive {

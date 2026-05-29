@@ -48,7 +48,7 @@ function PaginaPrendas() {
     
     const nivelesBreadcrumb = infoTipo ? [
         { label: 'Inicio', ruta: '/' },
-        { label: infoTipo.categoria_nombre, ruta: `categoria/${infoTipo.categoria_id}` },
+        { label: infoTipo.categoria_nombre, ruta: `/categoria/${infoTipo.categoria_id}` },
         { label: infoTipo.subcategoria_nombre },
         { label: infoTipo.nombre },
     ] : [

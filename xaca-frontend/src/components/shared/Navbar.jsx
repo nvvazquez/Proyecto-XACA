@@ -5,7 +5,6 @@ function Navbar() {
     return (
         <nav className={styles.navbar}>
             <div className={styles.brand}>
-                <div className={styles.logo}></div>
                 <span className={styles.title}>Almacén XACA</span>
             </div>
             <div className={styles.links}>

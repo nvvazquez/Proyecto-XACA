@@ -5,26 +5,24 @@ from rest_framework.views import APIView
 from .models import Categoria, Subcategoria, Tipo, Proveedor, Prenda
 from .serializers import CategoriaSerializer, SubcategoriaSerializer, TipoSerializer, ProveedorSerializer, PrendaSerializer
 from rest_framework.response import Response
+from django.db.models import Count
 
-# Create your views here.
-
-# - Categorias ----------------------
 class CategoriaListView(APIView):
-    """GET /api/categorias/"""
+
     def get(self, request):
         categorias = Categoria.objects.all()
         serializer = CategoriaSerializer(categorias, many=True)
         return Response(serializer.data)
     
 class CategoriaDetailView(APIView):
-    """GET /api/categorias/{id}/"""
+
     def get(self, request, pk):
         categoria = get_object_or_404(Categoria, pk=pk)
         serializer = CategoriaSerializer(categoria)
         return Response(serializer.data)
     
 class CategoriaSubcategoriasView(APIView):
-    """GET /api/categorias/{id}/subcategorias/"""
+
     def get(self, request, pk):
         categoria = get_object_or_404(Categoria, pk=pk)
         subcategorias = categoria.subcategorias.all()
@@ -32,7 +30,6 @@ class CategoriaSubcategoriasView(APIView):
         return Response(serializer.data)
 
 
-# - Subcategorias ----------------------
 class SubcategoriaTiposView(APIView):
     """GET /api/subcategorias/{id}/tipos/"""
     def get(self, request, pk):
@@ -42,19 +39,15 @@ class SubcategoriaTiposView(APIView):
         return Response(serializer.data)
 
 
-# - Tipos ----------------------
 class TipoDetailView(APIView):
-    """GET /api/tipos/{id}"""
+
     def get(self, request, pk):
         tipo = get_object_or_404(Tipo, pk=pk)
         serializer = TipoSerializer(tipo)
         return Response(serializer.data)
 
 class TipoPrendasView(APIView):
-    """
-        GET /api/tipos/{id}/prendas/
-        POST /api/tipos/{id}/prendas/
-    """
+
     def get(self, request, pk):
         tipo = get_object_or_404(Tipo, pk=pk)
         prendas = tipo.prendas.all()
@@ -71,15 +64,16 @@ class TipoPrendasView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-# - Prendas ----------------------
 class PrendaListView(APIView):
-    """ 
-        GET /api/prendas/?prestado=true
-        GET /api/prendas/?prestado=true&id_categoria=1
-    """
+
     def get(self, request):
         prestado = request.query_params.get('prestado')
+        search = request.query_params.get('search')
+
+        if search:
+            prendas = Prenda.objects.filter(codigo__icontains=search)
+            serializer = PrendaSerializer(prendas, many=True)
+            return Response(serializer.data)
 
         if prestado is None:
             return Response(
@@ -99,10 +93,6 @@ class PrendaListView(APIView):
         return Response(serializer.data)
 
 class PrendaDetailView(APIView):
-    """
-        PUT /api/prendas/{id}/
-        DELETE /api/prendas/{id}/ 
-    """
 
     def put(self, request, pk):
         prenda = get_object_or_404(Prenda, pk=pk)
@@ -118,9 +108,7 @@ class PrendaDetailView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
     
 class PrendaEstadoView(APIView):
-    """
-        PATCH /api/prendas/{id}/estado/
-    """
+
     def patch(self, request, pk):
         prenda = get_object_or_404(Prenda, pk=pk)
         prestado = request.data.get('prestado')
@@ -154,24 +142,38 @@ class PrendaEstadoView(APIView):
         return Response(serializer.data)
     
 class PrendaProveedoresView(APIView):
-    """
-        GET /api/prendas/{id}/proveedores/
-    """
+
     def get(self, request, pk):
         prenda = get_object_or_404(Prenda, pk=pk)
         proveedores = prenda.proveedores.all()
         serializer = ProveedorSerializer(proveedores, many=True)
         return Response(serializer.data)
+    
+    def post(self, request, pk):
+        prenda = get_object_or_404(Prenda, pk=pk)
+        proveedor_id = request.data.get('proveedor_id')
+        if not proveedor_id:
+            return Response({'error': 'proveedor_id requerido'}, status=status.HTTP_400_BAD_REQUEST)
+        proveedor = get_object_or_404(Proveedor, pk=proveedor_id)
+        if prenda.proveedores.filter(pk=proveedor_id).exists():
+            return Response({'error': 'Este proveedor ya está vinculado'}, status=status.HTTP_400_BAD_REQUEST)
+        prenda.proveedores.add(proveedor)
+        return Response(status=status.HTTP_201_CREATED)
+
+    def delete(self, request, pk, proveedor_id):
+        prenda = get_object_or_404(Prenda, pk=pk)
+        proveedor = get_object_or_404(Proveedor, pk=proveedor_id)
+        if not prenda.proveedores.filter(pk=proveedor_id).exists():
+            return Response({'error': 'Este proveedor no está vinculado'}, status=status.HTTP_400_BAD_REQUEST)
+        prenda.proveedores.remove(proveedor)
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-# - Proveedores ----------------------
+
 class ProveedorListView(APIView):
-    """
-        GET /api/proveedores/
-        POST /api/proveedores/
-    """
+
     def get(self, request):
-        proveedores = Proveedor.objects.all()
+        proveedores = Proveedor.objects.annotate(num_prendas=Count('prendas'))
         serializer = ProveedorSerializer(proveedores, many=True)
         return Response(serializer.data)
     
@@ -183,10 +185,7 @@ class ProveedorListView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class ProveedorDetailView(APIView):
-    """
-        PUT /api/proveedores/{id}/
-        DELETE /api/proveedores/{id}/ 
-    """
+
     def put(self, request, pk):
         proveedor = get_object_or_404(Proveedor, pk=pk)
         serializer = ProveedorSerializer(proveedor, data=request.data, partial=True)
@@ -199,3 +198,11 @@ class ProveedorDetailView(APIView):
         proveedor = get_object_or_404(Proveedor, pk=pk)
         proveedor.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+class ProveedorPrendasView(APIView):
+    
+    def get(self, request, pk):
+        proveedor = get_object_or_404(Proveedor, pk=pk)
+        prendas = proveedor.prendas.all()
+        serializer = PrendaSerializer(prendas, many=True)
+        return Response(serializer.data)

@@ -19,3 +19,6 @@ export const getPrendasPrestadas = (categoriaId = null) => {
     }
     return api.get('/prendas/', { params });
 }
+
+export const getPrendasPorCodigo = (search) =>
+    api.get(`/prendas/?search=${search}`)

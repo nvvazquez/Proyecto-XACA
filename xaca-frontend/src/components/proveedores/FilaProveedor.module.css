@@ -1,0 +1,119 @@
+.fila {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
+}
+
+.fila:last-child {
+    border-bottom: none;
+}
+
+.td {
+    padding: 15px 18px;
+    font-size: 13px;
+    color: #333;
+    vertical-align: middle;
+}
+
+.nombre {
+    font-weight: 500;
+    color: #222;
+}
+
+.codigo {
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 2px;
+}
+
+.contactoFila {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.icono {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+.prendas {
+    background-color: rgba(123, 111, 212, 0.1);
+    color: #7b6fd4;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 6px;
+}
+
+.badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 6px;
+}
+
+.activo {
+    color: #38A169;
+    background-color: rgba(56, 161, 105, 0.1);
+}
+
+.inactivo {
+    color: #aaa;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btnEditar,
+.btnEliminar,
+.btnActivar,
+.btnDesactivar {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid rgba(102, 102, 102, 0.397);
+    background: transparent;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btnEditar:hover {
+    border-color: rgba(123, 111, 212, 0.6);
+    background-color: rgba(123, 111, 212, 0.08);
+}
+
+.btnEliminar:hover {
+    border-color: rgba(161, 3, 3, 0.842);
+    background-color: rgba(204, 16, 16, 0.1);
+}
+
+.btnDesactivar:hover {
+    border-color: rgba(161, 3, 3, 0.842);
+    background-color: rgba(204, 16, 16, 0.1);
+}
+
+.btnActivar:hover {
+    border-color: rgba(40, 161, 3, 0.842);
+    background-color: rgba(63, 176, 48, 0.1);
+}
+
+.btnPrendas {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid rgba(102, 102, 102, 0.397);
+    background: transparent;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btnPrendas:hover {
+    border-color: rgba(111, 212, 187, 0.6);
+    background-color: rgba(111, 212, 187, 0.08);
+}

@@ -19,8 +19,10 @@ urlpatterns = [
     path('prendas/<int:pk>/', views.PrendaDetailView.as_view()),
     path('prendas/<int:pk>/estado/', views.PrendaEstadoView.as_view()),
     path('prendas/<int:pk>/proveedores/', views.PrendaProveedoresView.as_view()),
+    path('prendas/<int:pk>/proveedores/<int:proveedor_id>/', views.PrendaProveedoresView.as_view()),
 
     # Proveedores
     path('proveedores/', views.ProveedorListView.as_view()),
     path('proveedores/<int:pk>/', views.ProveedorDetailView.as_view()),
+    path('proveedores/<int:pk>/prendas/', views.ProveedorPrendasView.as_view()),
 ]

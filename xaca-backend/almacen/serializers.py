@@ -21,9 +21,11 @@ class TipoSerializer(serializers.ModelSerializer):
         fields = ['id', 'nombre', 'descripcion', 'subcategoria', 'subcategoria_nombre', 'categoria_nombre', 'categoria_id']
 
 class ProveedorSerializer(serializers.ModelSerializer):
+    num_prendas = serializers.IntegerField(read_only=True, default=0)
+
     class Meta:
         model = Proveedor
-        fields = ['id', 'nombre', 'email', 'telefono', 'activo']
+        fields = ['id', 'nombre', 'email', 'telefono', 'activo', 'num_prendas']
 
 class PrendaSerializer(serializers.ModelSerializer):
     tipo_nombre = serializers.CharField(source='tipo.nombre', read_only=True)

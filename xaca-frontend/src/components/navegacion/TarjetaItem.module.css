@@ -1,4 +1,5 @@
 .tarjeta {
+    min-height: 160px;
     background-color: #e8e8e8;
     border: 2.5px solid transparent;
     border-radius: 14px;
@@ -12,7 +13,7 @@
 }
 
 .tarjeta:hover {
-    opacity: 0.85;
+    opacity: 0.6;
 }
 
 .body {

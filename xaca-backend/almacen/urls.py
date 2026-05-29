@@ -11,6 +11,7 @@ urlpatterns = [
     path('subcategorias/<int:pk>/tipos/', views.SubcategoriaTiposView.as_view()),
 
     # Tipos
+    path('tipos/<int:pk>/', views.TipoDetailView.as_view()),
     path('tipos/<int:pk>/prendas/', views.TipoPrendasView.as_view()),
 
     # Prendas

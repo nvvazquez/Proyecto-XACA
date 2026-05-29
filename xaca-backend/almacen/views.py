@@ -43,6 +43,13 @@ class SubcategoriaTiposView(APIView):
 
 
 # - Tipos ----------------------
+class TipoDetailView(APIView):
+    """GET /api/tipos/{id}"""
+    def get(self, request, pk):
+        tipo = get_object_or_404(Tipo, pk=pk)
+        serializer = TipoSerializer(tipo)
+        return Response(serializer.data)
+
 class TipoPrendasView(APIView):
     """
         GET /api/tipos/{id}/prendas/

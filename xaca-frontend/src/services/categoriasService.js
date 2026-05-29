@@ -11,3 +11,6 @@ export const getTipos = (subcategoriaId) =>
 
 export const getPrendasPorTipo = (tipoId) =>
     api.get(`/tipos/${tipoId}/prendas/`)
+
+export const getTipoDetalle = (tipoId) =>
+    api.get(`/tipos/${tipoId}/`)

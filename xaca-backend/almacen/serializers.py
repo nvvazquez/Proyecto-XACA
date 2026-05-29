@@ -12,9 +12,13 @@ class SubcategoriaSerializer(serializers.ModelSerializer):
         fields = ['id', 'nombre', 'descripcion', 'categoria']
 
 class TipoSerializer(serializers.ModelSerializer):
+    subcategoria_nombre = serializers.CharField(source='subcategoria.nombre', read_only=True)
+    categoria_nombre = serializers.CharField(source='subcategoria.categoria.nombre', read_only=True)
+    categoria_id = serializers.IntegerField(source='subcategoria.categoria.id', read_only=True)
+
     class Meta:
         model = Tipo
-        fields = ['id', 'nombre', 'descripcion', 'subcategoria']
+        fields = ['id', 'nombre', 'descripcion', 'subcategoria', 'subcategoria_nombre', 'categoria_nombre', 'categoria_id']
 
 class ProveedorSerializer(serializers.ModelSerializer):
     class Meta:

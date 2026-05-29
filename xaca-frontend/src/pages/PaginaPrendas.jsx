@@ -13,8 +13,6 @@ import styles from "./PaginaPrendas.module.css"
 function PaginaPrendas() {
     const { id } = useParams();
     const tipoId = parseInt(id);
-    console.log('id desde useParams:', id)
-    console.log('Id parseado:', tipoId)
 
     const [infoTipo, setInfoTipo] = useState(null);
 

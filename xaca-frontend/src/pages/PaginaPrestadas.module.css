@@ -1,0 +1,55 @@
+.pagina {
+    padding: 28px 40px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.titulo {
+    font-size: 24px;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.subtitulo {
+    font-size: 14px;
+    color: #888;
+}
+
+.controles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.inputBusqueda {
+    padding: 7px 14px;
+    border: 0.5px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    font-size: 13px;
+    color: #333;
+    background: #e8e8e8;
+    outline: none;
+    width: 30%;
+    transition: border-color 0.15s;
+}
+
+.inputBusqueda:focus {
+    border-color: #7b6fd4;
+}
+
+@media (max-width: 768px) {
+    .pagina {
+        padding: 20px;
+    }
+    .titulo {
+        font-size: 20px;
+    }
+}

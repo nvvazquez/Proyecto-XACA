@@ -1,0 +1,27 @@
+.filtros {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.boton {
+    padding: 7px 16px;
+    border: 0.5px solid rgba(0, 0, 0, 0.15);
+    border-radius: 99px;
+    background-color: #e8e8e8;
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.boton:hover {
+    border-color: #d47f00;
+    color: #d47f00;
+}
+
+.boton.activo {
+    background: #d47f00;
+    border-color: #d47f00;
+    color: #e8e8e8;
+}

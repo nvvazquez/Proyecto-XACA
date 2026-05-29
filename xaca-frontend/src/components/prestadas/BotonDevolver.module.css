@@ -1,0 +1,23 @@
+.boton {
+    padding: 7px 14px;
+    border: 0.5px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    background: #4b9b154d;
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+
+.boton:hover:not(:disabled) {
+    border-color: #e8e8e8;
+    color: #e8e8e8;
+    background: #4b9b1593;
+}
+
+.boton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

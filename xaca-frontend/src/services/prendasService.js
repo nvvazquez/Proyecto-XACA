@@ -15,7 +15,7 @@ export const cambiarEstado = (id, prestado) =>
 export const getPrendasPrestadas = (categoriaId = null) => {
     const params = { prestado: true };
     if (categoriaId) {
-        params.categoria = categoriaId;
+        params.id_categoria = categoriaId;
     }
     return api.get('/prendas/', { params });
 }
